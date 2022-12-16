@@ -42,24 +42,24 @@
               <hr>
               <div class="col-sm">
                 <h5>Nilai-1</h5>
-                <input type="text" class="form-control" aria-label="State">
+                <input type="text" id="nilai1" class="form-control" aria-label="State">
               </div>
               <div class="col-sm">
                 <h5>Nilai-2</h5>
-                <input type="text" class="form-control" aria-label="Zip">
+                <input type="text" id="nilai2" class="form-control" aria-label="Zip">
               </div>
               <div class="col">
                 <h5>Operator</h5>
-                <select class="form-select" aria-label="Default select example">
-                <option value="0">-- Pilih --</option>
-                <option value="1">Penjumlahan</option>
-                <option value="2">Perkalian</option>  
-                <option value="3">Pembagian</option>
-                <option value="4">Pengurangan</option>
+                <select class="form-select" aria-label="Default select example" id="operator">
+                <option value="">-- Pilih --</option>
+                <option value="Penjumlahan">Penjumlahan</option>
+                <option value="Perkalian">Perkalian</option>  
+                <option value="Pembagian">Pembagian</option>
+                <option value="Pengurangan">Pengurangan</option>
               </select>
               </div>
               <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">Proses</button>
+                <button class="btn btn-primary" type="button" onclick="kalkulator()">Proses</button>
               </div>
               <hr>
               <button class="btn btn-secondary btn-lg" type="reset" style="width: 100px;">Reset</button>
@@ -69,6 +69,7 @@
         </div>
       </div>    
     </section>
+    <script src="assets/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
