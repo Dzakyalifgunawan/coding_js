@@ -4,9 +4,15 @@ section {
 
 .list-group {
     width: 300px;
-    margin: 10px;
+    margin: 5px;
 }
 
-.pendaftaran {
+a {
+    text-decoration: none;
+    color: black;
+}
 
+.btn {
+    width: 523px;
+    margin-left: 110px;
 }
