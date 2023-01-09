@@ -1,3 +1,70 @@
+function cekformdaftar() {
+    let kodedaftar = "MHS";
+    // document.getElementById("kode").value = kodedaftar;
+    let tanggal_hariini = new Date();
+    // console.log(tanggal_hariini);
+    let bulan = tanggal_hariini.getMonth();
+    let tahun = tanggal_hariini.getFullYear();
+    document.getElementById("kode").value = kodedaftar + bulan + tahun;
+}
+z
+document.getElementById("formdaftar").onload = function() {
+    cekformdaftar();
+}
+
+document.getElementById("nama").onkeyup = function() {
+    let txtnama = document.getElementById("nama").value;
+    let txtnama2 = txtnama.toUpperCase(); // toUpperCase = Untuk Memperbesar Huruf 
+    document.getElementById("nama").value = txtnama2;
+}
+
+document.getElementById("tempat").onkeyup = function() {
+    let txttempat = document.getElementById("tempat").value;
+    let txttempat2 = txttempat.toUpperCase();
+    document.getElementById("tempat").value = txttempat2;
+}
+
+document.getElementById("btn").onclick = function() {
+    let kode = document.getElementById("kode").value;
+    let nama = document.getElementById("nama").value;
+    let tempat = document.getElementById("tempat").value;
+    let tanggal = document.getElementById("tanggal").value;
+    let email = document.getElementById("email").value;
+    let jk ="";
+
+    if(document.getElementById("gridRadios1").checked == true) {
+        jk = document.getElementById("gridRadios1").value;
+    }else if (document.getElementById("gridRadios2").checked == true) {
+        jk = document.getElementById("gridRadios2").value;  
+    }
+
+    let game = "";
+    let coding = "";
+    let badminton = "";
+
+    if(document.getElementById("game").checked == true) {
+        game = "Game";
+    }if(document.getElementById("coding").checked == true) {
+        coding = "Coding";
+    }if(document.getElementById("badminton").checked == true) {
+        badminton = "Badminton";
+    }
+
+    let hobby = game + "," + coding + "," + badminton
+    let alamat = document.getElementById("alamat").value;
+    console.log(hobby);
+
+    let datatabel = "<tr>";
+    datatabel +=  "<td>" + kode + "</td>";
+    datatabel +=  "<td>" + nama + "</td>";
+    datatabel +=  "<td>" + tempat + "," + tanggal + "</td>";
+    datatabel +=  "<td>" + email + "</td>";
+    datatabel +=  "<td>" + jk + "</td>";
+    datatabel +=  "<td>" + hobby + "</td>";
+    datatabel +=  "<td>" + alamat + "</td>";
+    document.getElementById("rows_tabel").innerHTML = datatabel;
+}
+
 function pendaftaran() {
 //     var namax, tempatx, tanggalx, emailx, lakix, perempuanx, badmintonx, gamex, alamatx, codingx;
 //     namax = document.forms['datapribadi']['nama'].value;
@@ -34,7 +101,7 @@ function pendaftaran() {
 //    kol6.innerHTML = codingx;
 //    kol7.innerHTML = alamatx;
 
-var waktu = Date(); 
+var waktu = new Date(); 
         document.getElementById("tanggal").innerHTML = waktu;
         document.write(waktu);
 
@@ -53,3 +120,4 @@ function clear() {
     document.getElementById("badminton").value = "";
     document.getElementById("alamat").value = "";
 }
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body id="kodedaftar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand">Dzaky</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="home.html">Pendaftaran Nilai</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+    <form action="#" method="get" id="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Kasir</h2>
+                    <hr>
+                    <div class="row mb-3">
+                        <label for="kode" class="col-sm-2 col-form-label">Kode Nama:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="kode" name="kode">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="nama" class="col-sm-2 col-form-label">Nama Menu:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="nama" name="nama">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="nama" class="col-sm-2 col-form-label">Jenis:</label>
+                        <div class="col-sm-10">  
+                            <select class="form-select" id="jenis">
+                                <option value="Makanan" id="makanan">Makanan</option>
+                                <option value="Minuman" id="minuman">Minuman</option>
+                                <option value="Snack" id="snack">Snack</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="harga" class="col-sm-2 col-form-label">Harga:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="harga" name="harga">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="jumlah" class="col-sm-2 col-form-label">Jumlah Beli:</label>
+                        <div class="col-sm-10">
+                          <input type="number" class="form-control" id="jumlah" name="jumlah">
+                        </div>
+                    </div>
+                    <div class="mb-1 row">
+                        <fieldset class="row mb-3">
+                          <legend class="col-form-label col-sm-2 pt-0">Pembayaran:</legend>
+                          <div class="col-sm-10" name="jenis" id="jenis">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="nontunai" id="tunai">
+                              <label class="form-check-label" for="tunai">
+                                Tunai
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="nontunai" id="nontunai">
+                              <label class="form-check-label" for="nontunai">
+                                Non Tunai
+                              </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    <div class="d-grid gap-2 col-4 mx-auto">
+                        <button class="btn btn-primary" type="button" id="btn" name="btn">Order</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="container">
+                        <div class="row">
+                            <h4>
+                            <div class="mt-0">
+                                <label for="kode" class="col-sm-5 col-form-label">Invace:</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" id="invace" name="invace" disabled>
+                                </div>
+                            </div>
+                            </h4>                            
+                            <hr>
+                            <table class="table table-borderless" id="tabel">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Kode:</th>
+                                        <td id="kode1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nama:</th>
+                                        <td id="nama1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Jenis:</th>
+                                        <td id="jenis1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Jumlah Beli:</th>
+                                        <td id="jumlah1"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Diskon:</th>
+                                        <td id="diskon"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Total Bayar:</th>
+                                        <td id="tb"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Pembayaran:</th>
+                                        <td id="pembayaran"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </form>    
+    <script src="assets/kasir1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
