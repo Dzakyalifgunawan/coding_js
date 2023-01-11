@@ -5,6 +5,13 @@ function kodenama() {
     let tanggalsekarang = tanggal.getDate();
     let tahun = tanggal.getFullYear();
     document.getElementById("invace").value = a + tanggalsekarang + tahun + b
+    let carabayar = ["tunai", "nontunai"];
+    let jenis = "";
+
+    for (let i = 0; i<carabayar.length; i++){
+        jenis += '<input class="form-check-input" type="radio" name="tunai" id="' + carabayar[i] + '" />' + carabayar[i] + "";
+    }
+    document.getElementById("jenisbayar").innerHTML = jenis;
 }
 
 document.getElementById("kodedaftar").onload = function() {
@@ -40,6 +47,8 @@ document.getElementById("btn").onclick = function() {
         h = "Tunai";
     }else if (document.getElementById("nontunai").checked == true) {
         h = "Non Tunai";  
+    }else{
+        h = ("Operator Belum Diisi");
     };
 
     jenis2();
@@ -48,6 +57,7 @@ document.getElementById("btn").onclick = function() {
     document.getElementById("nama1").innerHTML = d;
     document.getElementById("jumlah1").innerHTML = jualbeli;
     document.getElementById("pembayaran").innerHTML = h;
+    
     
 
     total(jualbeli, harga);
@@ -65,4 +75,26 @@ function total(jualbeli, harga){
         first = (jualbeli*harga);
         document.getElementById("tb").innerHTML = first;
     }
+}
+
+document.getElementById("namamenu").onchange = function(){
+    let bs = document.getElementById("namamenu").value;
+    let harga = 0;
+
+    if(bs == "Bakso"){
+        harga = 20000;
+    }else if(bs == "Mie Ayam"){
+        harga = 30000;
+    }else {
+        harga = 50000;
+    }
+    document.getElementById("harga").value = harga;
+}
+
+document.getElementById("jumlah").onchange = function(){
+    let harga = document.getElementById("harga").value;
+    let jualbeli = document.getElementById("jumlah").value;
+    total = harga * jualbeli;
+
+    alert(total);
 }
